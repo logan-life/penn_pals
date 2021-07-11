@@ -1,0 +1,14 @@
+language: node_js
+cache:
+  yarn: true
+  directories:
+    - node_modules
+install:
+- nvm install node
+- node -v
+- cd react-ui && yarn install
+- cd ../backend && yarn install
+script:
+- cd ../react-ui && yarn test
+- cd ../backend && yarn test_integration
+- cd ../backend && yarn test_api

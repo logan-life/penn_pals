@@ -1,0 +1,588 @@
+swagger: '2.0'
+info:
+  version: '1'
+  title: Pennpals
+  description: API documentation for the Pennpals server (created by Logan, Daria and Archith)
+tags:
+- name: Registration and login
+  description: User registration and login
+- name: User profile
+  description: Updates user profile
+- name: Status
+  description: Managing user status and viewing contact statuses
+- name: Contacts
+  description: Managing contacts
+- name: Messaging
+  description: Twilio messaging routes
+- name: Call
+  description: Handling incoming and outgoing calls
+paths:
+  /register:
+    post:
+      summary: Submits form data from registration page to register a user
+      tags: [Registration and login]
+      parameters:
+      - in: body
+        name: body
+        description: New user to be registered
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+            password:
+              type: string
+            email:
+              type: string
+            firstName:
+              type: string
+            lastName:
+              type: string
+            security_question:
+              type: string
+            security_answer:
+              type: string  
+      responses:
+        200:
+          description: Success
+        400:
+          description: Validation error
+        500:
+          description: Server error
+  /login:
+    get:
+      summary: Takes a jwt and authenticates it, returns corresponding user document if valid
+      tags: [Registration and login]
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/User_schema'
+        500:
+          description: Server error
+    post:
+      summary: Submits form data from login page, authenticates user, and redirects to main view
+      tags: [Registration and login]
+      parameters:
+      - in: body
+        name: body
+        description: User credentials
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+            password:
+              type: string
+      responses:
+        200:
+          description: Success
+        400:
+          description: Validation error
+        500:
+          description: Server error
+  /logout:
+    get:
+      summary: Clears the authentication cookie
+      tags: [Registration and login]
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+  /resetPassword:
+    post:
+      summary: Retrieve security question of a given user
+      tags: [Registration and login]
+      parameters:
+      - in: body
+        name: body
+        description: User name of the user who is trying to reset the password
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/User_schema'
+        500:
+          description: Server error
+    put:
+      summary: Change password of a user
+      tags: [Registration and login]
+      parameters:
+      - in: body
+        name: body
+        description: Current password, secret answer and username
+        required: true
+        schema:
+          type: object
+          properties:
+            password:
+              type: string
+            answer:
+              type: string
+            username:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+  /changePassword:
+    put:
+      summary: Change password of a user
+      tags: [User profile]
+      parameters:
+      - in: body
+        name: body
+        description: Old and new password
+        required: true
+        schema:
+          type: object
+          properties:
+            password:
+              type: string
+            newPassword:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+  /profile:
+    get:
+      summary: Retrieves user info by the token from the cookie
+      tags: [User profile]
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/User_schema'
+        500:
+          description: Server error
+    post:
+      summary:   Changes status of users account to inactive
+      tags: [User profile]
+      parameters:
+      - in: body
+        name: body
+        description: Current password
+        required: true
+        schema:
+          type: object
+          properties:
+            password:
+              type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/User_schema'
+        500:
+          description: Server error
+  /status:
+    put:
+      summary: Uploads a status or replaces the existing status for a new user
+      tags: [Status]
+      parameters:
+      - in: body
+        name: body
+        description: Username of the contact to be added
+        required: true
+        schema:
+          type: object
+          properties:
+            type:
+              type: string
+            text:
+              type: string
+            image:
+              type: string
+            url:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error      
+    get:
+      summary: Gets the list of unseen statuses from current user's active contacts
+      tags: [Status]
+      responses:
+        200:
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Status_schema'
+        500:
+          description: Server error
+    post:
+      summary: Marks a status as seen for a specific contact
+      tags: [Status]
+      parameters:
+      - in: body
+        name: body
+        description: Username and status_id
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+            status_id:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error    
+  /contacts:
+    put:
+      summary:  Adds a contact to the current user's contact list
+      tags: [Contacts]
+      parameters:
+      - in: body
+        name: body
+        description: Username of the contact to be added
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+    delete:
+      summary: Deletes a contact from the user's contact list
+      tags: [Contacts]
+      parameters:
+      - in: body
+        name: body
+        description: Username of the contact to be deleted
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+    get:
+      summary: Gets the full list of the current user's contacts
+      tags: [Contacts]
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              firstname:
+                type: string
+              lastname:
+                type: string
+              username:
+                type: string
+              avatar:
+                type: string
+              conversation_sid:
+                type: string
+              status_id:
+                type: string
+              status_seen:
+                type: string
+        500:
+          description: Server error  
+    post:
+      summary: Returns details of user contact if contact exists  
+      tags: [Contacts]
+      parameters:
+      - in: body
+        name: body
+        description: Username of the contact to be extracted
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/User_schema'
+        500:
+          description: Server error
+  /contactsuggest:
+    get:
+      summary:  Get a contact suggestion
+      tags: [Contacts]
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              firstname:
+                type: string
+              lastname:
+                type: string
+              username:
+                type: string
+              avatar:
+                type: string
+              conversation_sid:
+                type: string
+        500:
+          description: Server error
+  /twilio:
+    get: 
+      summary: Returns a Twilio AccessToken with a ChatGrant, used to instantiate a Converstation Client
+      tags: [Messaging]
+      parameters:
+      - in: query
+        name: username
+        description: Username of the requester
+        type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              jwt_token:
+                type: string
+        500:
+          description: Server error
+    post: 
+      summary: Returns a Twilio AccessToken with a VideoGrant, used to instantiate a VideoChat Room
+      tags: [Messaging]
+      parameters:
+      - in: body
+        name: body
+        description: Identity and room relevant to the conversation
+        required: true
+        schema:
+          type: object
+          properties:
+            identity:
+              type: string
+            room:
+              type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              jwt_token:
+                type: string
+        500:
+          description: Server error
+  /incomingcall:
+    get: 
+      summary: Polls the currentUser's userDocument for an incoming call
+      tags: [Call]
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              incoming_call:
+                type: string
+        500:
+          description: Server error
+    post: 
+      summary: Looks up the calleeName user document and saves the callerName string
+      tags: [Call]
+      parameters:
+      - in: body
+        name: body
+        description: Identity and room relevant to the conversation
+        required: true
+        schema:
+          type: object
+          properties:
+            callerName:
+              type: string
+            calleeName:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+    delete: 
+      summary: Looks up the username's user document and clears the incoming_call field
+      tags: [Call]
+      parameters:
+      - in: body
+        name: body
+        description: Identity and room relevant to the conversation
+        required: true
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+  /outgoingcall:
+    get: 
+      summary: Determines if the callee has declined to answer a call request
+      tags: [Call]
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              outgoing_call_active:
+                type: string
+        500:
+          description: Server error
+    post: 
+      summary: Looks up the contact's user document and checks the online and outgoing_call_active fields
+      tags: [Call]
+      parameters:
+      - in: body
+        name: body
+        description: Identity and room relevant to the conversation
+        required: true
+        schema:
+          type: object
+          properties:
+            contactName:
+              type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+            properties:
+              online:
+                type: string
+              outgoing_call_active:
+                type: string
+        500:
+          description: Server error
+    put: 
+      summary: Sets currentUser's outgoing_call_active boolean to true
+      tags: [Call]
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error   
+    delete: 
+      summary: Sets currentUser's outgoing_call_active boolean to false
+      tags: [Call]
+      responses:
+        200:
+          description: Success
+        500:
+          description: Server error
+definitions:
+  Status_schema: 
+    type: object
+    properties:
+      username:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      type:
+        type: string
+      text:
+        type: string
+      image:
+        type: string
+      url:
+        type: string
+      upload_time:
+        type: string
+        format: date-time
+  Contacts_schema:
+    type: object
+    properties:
+      username:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      avatar:
+        type: string
+      conversation_sid:
+        type: string
+      hidden:
+        type: boolean
+      status_id:
+        type: string
+      status_seen:
+        type: boolean
+  User_schema:
+    type: object
+    properties:
+      username:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      password:
+        type: string
+      email:
+        type: string
+      security_question:
+        type: string
+      security_answer:
+        type: string
+      avatar:
+        type: string
+      register_time:
+        type: string
+        format: date-time
+      active_status:
+        type: boolean
+      online:
+        type: boolean
+      attempts_with_wrong_password:
+        type: integer
+      incoming_call:
+        type: string
+      outgoing_call_active:
+        type: boolean
+      locked_out_until:
+        type: string
+        format: date-time
+      contacts:
+        type: array
+        items:
+          $ref: '#/definitions/Contacts_schema'
+      status:
+       $ref: '#/definitions/Status_schema'  
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /cis_557/Pennpals_LDA/1
+schemes:
+ - https
+ - http

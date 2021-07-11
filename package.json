@@ -1,0 +1,36 @@
+{
+  "name": "pennpals",
+  "version": "0.0.5",
+  "description": "A single page messaging application ",
+  "engines": {
+    "node": "15.x"
+  },
+  "scripts": {
+    "start": "node backend/start_server.js",
+    "build": "cd react-ui/ && yarn install && yarn run build",
+    "dev": "concurrently \"node backend/start_server.js\" \"cd react-ui && yarn start-client\"",
+    "test": "cd react-ui && yarn test"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cis557/project-video-and-messaging-web-app-logandariaarchith"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}

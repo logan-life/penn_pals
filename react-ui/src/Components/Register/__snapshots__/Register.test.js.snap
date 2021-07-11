@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register view matches snapshot 1`] = `
+<div
+  className="Register"
+>
+  <h1
+    id="status"
+  >
+    Please Register
+  </h1>
+  <form
+    className="RegisterForm"
+  >
+    <div
+      className="form-group"
+      controlID="fn"
+    >
+      <label
+        className="form-label"
+      >
+        First Name
+      </label>
+      <input
+        className="form-control"
+        id="fn"
+        name="firstname"
+        onChange={[Function]}
+        placeholder="Enter first name"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+      controlID="ln"
+    >
+      <label
+        className="form-label"
+      >
+        Last Name
+      </label>
+      <input
+        className="form-control"
+        id="ln"
+        name="lastname"
+        onChange={[Function]}
+        placeholder="Enter last name"
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+      controlID="email"
+    >
+      <label
+        className="form-label"
+      >
+        Email address
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="Enter email address"
+        type="email"
+      />
+    </div>
+    <div
+      className="form-group"
+      controlID="un"
+    >
+      <label
+        className="form-label"
+      >
+        Username
+      </label>
+      <input
+        className="form-control"
+        id="un"
+        name="username"
+        onChange={[Function]}
+        placeholder="Enter username"
+        type="text"
+      />
+      <small
+        className="text-muted form-text"
+      >
+        TODO username requirements here
+      </small>
+    </div>
+    <div
+      className="form-group"
+      controlID="pwd"
+    >
+      <label
+        className="form-label"
+      >
+        Password
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        name="password"
+        onChange={[Function]}
+        placeholder="Enter password"
+        type="password"
+      />
+      <small
+        className="text-muted form-text"
+      >
+        TODO password requirements here
+      </small>
+    </div>
+    <div
+      className="form-group"
+      controlID="sq"
+    >
+      <label
+        className="form-label"
+      >
+        Secret Question
+      </label>
+      <select
+        className="form-control"
+        name="security_question"
+        onChange={[Function]}
+      >
+        <option
+          value="What is your oldest sibling’s birthday month and year? (e.g., January 1900)"
+        >
+          What is your oldest sibling’s birthday month and year? (e.g., January 1900)
+        </option>
+        <option
+          value="What was the name of your first stuffed animal?"
+        >
+          What was the name of your first stuffed animal?
+        </option>
+        <option
+          value="What is your maternal grandmother's maiden name?"
+        >
+          What is your maternal grandmother's maiden name?
+        </option>
+        <option
+          value="What street did you live on in third grade?"
+        >
+          What street did you live on in third grade?
+        </option>
+        <option
+          value="What school did you attend for sixth grade?"
+        >
+          What school did you attend for sixth grade?
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-group"
+      controlID="sa"
+    >
+      <label
+        className="form-label"
+      >
+        Secret Answer
+      </label>
+      <input
+        className="form-control"
+        id="sa"
+        name="security_answer"
+        onChange={[Function]}
+        placeholder="Secret Answer"
+        type="text"
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="regBtn"
+      onClick={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

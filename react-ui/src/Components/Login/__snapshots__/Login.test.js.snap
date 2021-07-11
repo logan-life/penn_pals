@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login view matches snapshot 1`] = `
+<div
+  className="Login"
+>
+  <h1
+    id="status"
+  >
+    Please login
+  </h1>
+  <div
+    className="LoginForm"
+  >
+    <form
+      className=""
+    >
+      <div
+        className="form-group"
+        controlID="loginUser"
+      >
+        <label
+          className="form-label"
+        >
+          Username
+        </label>
+        <input
+          className="form-control"
+          id="loginUser"
+          name="user"
+          onChange={[Function]}
+          placeholder="Enter username"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="form-group"
+        controlID="formBasicPassword"
+      >
+        <label
+          className="form-label"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="form-control"
+          id="formBasicPassword"
+          name="password"
+          onChange={[Function]}
+          placeholder="Enter password"
+          type="password"
+          value=""
+        />
+        <small
+          className="text-muted form-text"
+        >
+          <a
+            href="/ResetPassword"
+            id="reset"
+            onClick={[Function]}
+          >
+            Reset Password
+          </a>
+        </small>
+      </div>
+      <br />
+      <button
+        className="btn btn-outline-primary"
+        disabled={false}
+        id="loginBtn"
+        onClick={[Function]}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`ResetPassword matches snapshot 1`] = `
+<div>
+  <div
+    className="form-group"
+    controlID="getDataForm"
+  >
+    <label
+      className="form-label"
+      htmlFor="userName"
+    >
+      Please provide your user name:
+    </label>
+    <input
+      className="form-control"
+      id="name"
+      name="name"
+      onChange={[Function]}
+      placeholder="User Name"
+      type="text"
+      value=""
+    />
+  </div>
+  <br />
+  <button
+    className="btn btn-outline-primary"
+    disabled={false}
+    id="resetPswd"
+    onClick={[Function]}
+    type="button"
+  >
+    Reset Password
+  </button>
+</div>
+`;

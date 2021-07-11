@@ -1,0 +1,265 @@
+.mainviewWrapperDiv {
+  height: 100%;
+  width: 100%;
+}
+
+.mainviewTitleAndLogoutDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactViewDiv {
+  /*contains contactlist, contactsearch, contactsuggestions*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.contactListDiv {
+  /*can appear alone, or as a child of contactListAndMessaging and siblign of contactMessagingDiv*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.contactAvatarAndButtonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.contactListActionButtonsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.contactListAndMessagingDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.contactMessagingDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.searchContactDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchResultsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.contactSuggestionsWrapperDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.conversations-window-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+#SelectedConversation {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: white;
+  margin: auto;
+}
+
+#ChatWindow {
+  /* border: 1px solid #eee; */
+  /* border-radius: 8px; */
+  background: #fff;
+}
+
+#SelectedConversation {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.conversationMessagesListDiv {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+#participants {
+  font-family: Monaco;
+  size: 12pt;
+}
+
+#participants,
+#messages {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 1em;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#OpenChannel {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+}
+
+.nav-pills .nav-item {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 6%;
+}
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+}
+.received_withd_msg > div {
+  background: #ebebeb none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #646464;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+}
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.received_withd_msg {
+  width: 75%;
+}
+
+.sent_msg > div {
+  background: #05728f none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0;
+  color: #fff;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+}
+.outgoing_msg {
+  overflow: hidden;
+  margin: 26px 0 26px;
+}
+.sent_msg {
+  display: inline-block;
+
+  width: 70%;
+}
+.input_msg_write input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #4c4c4c;
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.picture_preview {
+  width: 250px;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.picture_preview {
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+  filter: blur(2px);
+}
+
+.media_icon:hover .picture_preview {
+  filter: blur(0px);
+}
+
+.picture_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media {
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+  display: flex;
+  width: 220px;
+  height: 220px;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder {
+  background: rgba(22, 46, 52, 0.58);
+}
+
+.hidden {
+  display: none;
+}
+
+.medias {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-flow: wrap;
+}
+
+.media_icon {
+  margin: 4px;
+  position: relative;
+  border-radius: 4px;
+  top: 0;
+  overflow: hidden;
+  height: 220px;
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  flex-basis: 220px;
+}
+
+.conversationMessagesWrapperDiv {
+  height: 500px;
+}

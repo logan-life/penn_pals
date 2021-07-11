@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusView matches snapshot 1`] = `
+<div
+  className="fade alert alert-danger show"
+  id="alertContactViewNotLoggedIn"
+  role="alert"
+>
+  Please
+   
+  <a
+    className="alert-link"
+    href="/Login"
+    onClick={[Function]}
+  >
+    login
+  </a>
+   
+  to see your status.
+</div>
+`;

@@ -1,0 +1,41 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "The backend for our messaging app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node start_server.js",
+    "test_integration": "jest --coverage ./integration_tests",
+    "test_api": "jest --coverage ./api_tests",
+    "test": "jest --coverage"
+  },
+  "repository": "https://github.com/cis557/project-video-and-messaging-web-app-logandariaarchith",
+  "author": "Our Team",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.802.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "gravatar": "^1.8.1",
+    "jest": "^26.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "multer-s3": "^2.9.0",
+    "node-fetch": "^2.6.1",
+    "node-twilio": "^0.1.2",
+    "supertest": "^6.0.1",
+    "twilio": "^3.52.0",
+    "ws": "^7.3.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

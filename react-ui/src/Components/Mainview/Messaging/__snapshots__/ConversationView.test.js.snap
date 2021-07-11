@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConversationView view matches snapshot 1`] = `
+<div
+  className="spinner-border"
+  role="status"
+>
+  <span
+    className="sr-only"
+  >
+    Loading Conversation
+  </span>
+</div>
+`;

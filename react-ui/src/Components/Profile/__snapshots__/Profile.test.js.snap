@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangePassword view matches snapshot 1`] = `
+<div
+  id="changePwd"
+>
+  <div
+    className="Profile Person"
+  >
+    <div
+      className="form-group"
+      controlID="oldPassword"
+    >
+      <label
+        className="form-label"
+        htmlFor="oldPassword"
+      >
+        Old Password
+      </label>
+      <input
+        className="form-control"
+        id="oldPassword"
+        name="password"
+        onChange={[Function]}
+        placeholder="Old password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+      controlID="newPassword"
+    >
+      <label
+        className="form-label"
+        htmlFor="newPassword"
+      >
+        New Password
+      </label>
+      <input
+        className="form-control"
+        id="newPassword"
+        name="newPassword"
+        onChange={[Function]}
+        placeholder="New password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+      controlID="newPasswordCopy"
+    >
+      <label
+        className="form-label"
+        htmlFor="newPasswordCopy"
+      >
+        Repeat new password
+      </label>
+      <input
+        className="form-control"
+        id="newPasswordCopy"
+        name="newPasswordCopy"
+        onChange={[Function]}
+        placeholder="Repeat new password"
+        type="password"
+        value=""
+      />
+    </div>
+    <button
+      className="btn btn-outline-primary"
+      disabled={false}
+      id="changePswd"
+      onClick={[Function]}
+      type="button"
+    >
+      Change Password
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Deactivate view matches snapshot 1`] = `
+<div
+  id="changePwd"
+>
+  <div
+    className="form-group"
+    controlID="oldPassword"
+  >
+    <label
+      className="form-label"
+      htmlFor="oldPassword"
+    >
+      Old Password
+    </label>
+    <input
+      className="form-control"
+      id="password"
+      name="password"
+      onChange={[Function]}
+      placeholder="Old password"
+      type="password"
+      value=""
+    />
+  </div>
+  <button
+    className="btn btn-outline-primary"
+    disabled={false}
+    id="deactivate"
+    onClick={[Function]}
+    type="button"
+  >
+    Deactivate Account
+  </button>
+</div>
+`;
+
+exports[`Profile view matches snapshot 1`] = `
+<div
+  className="fade alert alert-danger show"
+  id="alertContactViewNotLoggedIn"
+  role="alert"
+>
+  Please
+   
+  <a
+    className="alert-link"
+    href="/Login"
+    onClick={[Function]}
+  >
+    login
+  </a>
+   
+  to see your profile.
+</div>
+`;

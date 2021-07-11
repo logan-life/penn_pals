@@ -1,0 +1,22 @@
+.active:after {
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+input#type-a-message {
+    display: inline-block;
+    width: 500px;
+}
+
+.messageListDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

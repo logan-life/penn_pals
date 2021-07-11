@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactView view matches snapshot 1`] = `
+<div
+  className="contactViewDiv"
+>
+  <div
+    className="contactListDiv"
+    id="contactlist"
+  >
+    <h1>
+      Your Contacts
+    </h1>
+  </div>
+  <div
+    className="contactSuggestionsWrapperDiv"
+    id="contactSuggestions"
+  >
+    <h1>
+      Suggested Contact
+    </h1>
+    <div
+      className="contactSuggestDiv"
+      id="contactsuggest"
+    >
+      <div>
+        <img
+          alt=""
+          height="110"
+          width="110"
+        />
+      </div>
+      <div
+        className="contactSuggestMetadataDiv"
+      >
+        <h2>
+           
+        </h2>
+        <button
+          className="btn btn-outline-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="submit"
+        >
+          Add Contact
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="searchContactDiv"
+  >
+    <div
+      className="searchPromptDiv"
+    >
+      <form
+        className="searchPromptForm"
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="form-label"
+          >
+            <h1>
+              Search Contact
+            </h1>
+          </label>
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Example: 'lmayliffe'"
+            type="search"
+            value=""
+          />
+        </div>
+        <button
+          className="btn btn-outline-primary"
+          disabled={false}
+          id="contactSearchButton"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginBottom": "15px",
+            }
+          }
+          type="submit"
+          value="Search"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+  <div>
+    <h3>
+      Incoming Call Monitor
+    </h3>
+    <div>
+      No incoming calls right now.
+    </div>
+  </div>
+</div>
+`;

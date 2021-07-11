@@ -1,0 +1,17 @@
+.userStatus{
+    list-style: none;
+    display: inline-block;
+}
+.userProfInfo{
+    display: inline-block;
+    background-color: pink;
+}
+
+.uploadStatusButtons{
+    justify-content: space-evenly;
+}
+
+
+
+    
+    
